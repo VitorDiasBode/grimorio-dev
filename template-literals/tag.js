@@ -1,26 +1,31 @@
 import chalk from "chalk";
-import stripAnsi from "strip-ansi";
 
 function main(){
-    // console.log( myTag`A Loba se chama Ana` );
-    const Listajogadores = [{"nome":"Ana", "pontos":100}, {"nome":"Vitor", "pontos":90}, {"nome":"Ashley", "pontos":60}];
-    console.log(definirVencerdor`Os jogadores são: ${ Listajogadores[2] }, ${ Listajogadores[0] } e ${ Listajogadores[1] }`);
+    const listaJogadores = [
+        {"nome":"Vitor", "pontos":90}, 
+        {"nome":"Ana", "pontos":100}, 
+        {"nome":"Ashley", "pontos":60}
+    ];
+
+    const resultado = definirVencedor`O jogador verde venceu: ${ listaJogadores[0] }, ${ listaJogadores[1] } e ${ listaJogadores[2] }.`;
+    console.log(resultado);
 }
 
-function definirVencerdor(string, ...jogadores){
-    let indexJogadorVencedor = 0;
-    jogadores.forEach((jogador, index) => {
-        if(jogador.pontos > jogadores[indexJogadorVencedor].pontos){indexJogadorVencedor = index} 
-         jogador.nome = chalk.red(jogador.nome);
+function definirVencedor(strings, ...jogadores){
+    //encontra indice do jogador com mais pontos
+    const indexVencedor = jogadores.reduce( (indiceMaior, jogador, index, arr) =>{
+        return jogador.pontos > arr[indiceMaior].pontos ? index : indiceMaior; 
+    }, 0);
+
+    //formata nomes com cor para vencedor e demais jogadores
+    const nomesFormatados = jogadores.map((jogador, index) =>{
+        return index === indexVencedor ? chalk.green(jogador.nome) : chalk.red(jogador.nome);
     });
 
-    jogadores[indexJogadorVencedor].nome = chalk.green(stripAnsi(jogadores[indexJogadorVencedor].nome));
-
-    console.log(string.reduce( (textoCompleto, palavra, index) => {
-        const nomeJogador = jogadores[index] !== undefined ? jogadores[index].nome : "";
-        return textoCompleto + palavra + nomeJogador;
-    }, ''));
-
+    //monta a string com os nomes formatados
+    return strings.reduce( (textoCompleto, palavra, index) => {
+        return textoCompleto + palavra + (nomesFormatados[index] ?? '');
+    }, '');
 }
 
 main()
