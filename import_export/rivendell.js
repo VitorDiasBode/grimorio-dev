@@ -29,6 +29,8 @@ const gandalf = {
 const comitiva = [aragorn, boromir, legolas, gimli, gandalf];
 
 comitiva.push(...Object.values(hobbits));
-console.log(`A comitiva é formada com ${comitiva.map((membro) => membro.nome).join(', ')}`);
 
 export default comitiva;
+
+//console.log(`A comitiva é formada com ${comitiva.map((membro) => membro.nome).join(', ')}`);
+
