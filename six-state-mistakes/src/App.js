@@ -1,13 +1,14 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import FunctionalUpdate from './pages/1_FunctionalUpdate';
-import './pages/style.css'
+import FunctionalUpdate from './pages/1-FunctionalUpdate/FunctionalUpdate';
+import StateInitialization from './pages/2-StateInitialization/StateInitialization';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<FunctionalUpdate/>}/>
+          <Route path='/1' element={<FunctionalUpdate/>}/>
+          <Route path='/2' element={<StateInitialization/>}/>
         </Routes>
       </BrowserRouter>
     </div>

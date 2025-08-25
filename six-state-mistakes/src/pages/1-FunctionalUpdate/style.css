@@ -13,12 +13,20 @@
 
 }
 
+
+/* ----h1---- */
+
+
 .main h1 {
     color: rgb(60, 6, 108);
     font-size: 42px;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
+
+
+/* ----button---- */
+
 
 .main button {
     min-width: 160px;
@@ -49,7 +57,9 @@
 }
 
 
-/* -------- */
+/* ----contador---- */
+
+
 .contador {
     font-size:52px;
     font-weight: 700;
@@ -61,7 +71,8 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.4), inset 0 -4px 10px rgba(255,255,255,0.1);
     letter-spacing: 2px;
     transition: all 0.3s ease;
-    margin-top: 40px;
+    margin-top: 40px 
+    ;
 }
 
 .contador:hover {

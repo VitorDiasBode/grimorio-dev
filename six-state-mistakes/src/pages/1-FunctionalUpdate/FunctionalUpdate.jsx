@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css';
 
 const FunctionalUpdate = () => {
     const [number, setNumber] = useState(0);
