@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import FunctionalUpdate from './pages/1-FunctionalUpdate/FunctionalUpdate';
 import StateInitialization from './pages/2-StateInitialization/StateInitialization';
 import UpdateSpecificObjProperty from './pages/3-UpdateSpecificObjectProperti/UpdateSpecificObjProperty';
+import ReducerHook from './pages/4-ReducerHook/ReducerHook';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route path='/1' element={<FunctionalUpdate/>}/>
           <Route path='/2' element={<StateInitialization/>}/>
           <Route path='/3' element={<UpdateSpecificObjProperty/>}/>
+          <Route path='/4' element={<ReducerHook/>}/>
         </Routes>
       </BrowserRouter>
     </div>

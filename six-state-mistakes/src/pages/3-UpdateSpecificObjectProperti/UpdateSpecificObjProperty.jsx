@@ -158,7 +158,6 @@ function UpdateSpecificObjProperty() {
       setCharacter((prev) => ({...prev, [key]: value}));
     }
 
-
     return (
       <Main>
         <Form>
