@@ -92,7 +92,6 @@ export const FactCard = styled.div`
 `;
 
 function reducer(state, action){
-    console.log(action);
     switch (action.type) {
         case 'hpIncrement':
             return {...state, hp:state.hp+1};
@@ -102,6 +101,14 @@ function reducer(state, action){
             return {...state, power:state.power+1};
         case 'powerDecrement':
             return {...state, power:state.power-1};
+        case 'incrementFactPower':
+            const updatedFacts = state.facts.map((fact, idx) => {
+                return idx === action.factIndex ? {...fact, charge:fact.charge+1 } : fact}
+            );
+            return {...state, facts:updatedFacts};
+        case 'decrementFactPower':
+            state.facts[action.factIndex].charge -= 1;
+            return {...state };
         default:
             return state;
     }
@@ -119,28 +126,28 @@ export default function ReducerHook() {
         ]
     });
 
-    const [selectedFact, setSelectedFact] = useState(null);
+    const [selectedFactID, setSelectedFactID] = useState(-1);
 
   return (
     <MainContainer>
         <Title>{character.name}</Title>
         <SectionTitle>HP</SectionTitle>
         <AttributeBox>
-            <PirateButton onClick={() => dispatch({type:'hpIncrement'})}>+</PirateButton>
-            <AttributeValue>{character.hp}</AttributeValue>
             <PirateButton onClick={() => dispatch({type:'hpDecrement'})}>-</PirateButton>
+            <AttributeValue>{character.hp}</AttributeValue>
+            <PirateButton onClick={() => dispatch({type:'hpIncrement'})}>+</PirateButton>
         </AttributeBox>
 
         <SectionTitle>Power</SectionTitle>
         <AttributeBox>
-            <PirateButton onClick={() => dispatch({type:'powerIncrement'})}>+</PirateButton>
-            <AttributeValue>{character.power}</AttributeValue>
             <PirateButton onClick={() => dispatch({type:'powerDecrement'})}>-</PirateButton>
+            <AttributeValue>{character.power}</AttributeValue>
+            <PirateButton onClick={() => dispatch({type:'powerIncrement'})}>+</PirateButton>            
         </AttributeBox>
 
         <SectionTitle>Fatos</SectionTitle>
         {character.facts.map((f, index) => (
-            <FactCard key={index} onClick={() => setSelectedFact(f)}>
+            <FactCard key={index} onClick={() => setSelectedFactID(index)}>
                 <span>{f.fact}</span>
                 <AttributeBox>
                     <AttributeValue>{f.charge}</AttributeValue>
@@ -148,22 +155,21 @@ export default function ReducerHook() {
             </FactCard>
         ))}
 
-        {selectedFact && (
-            <ModalOverlay onClick={() => setSelectedFact(null)}>
+        {selectedFactID > -1 && (
+            <ModalOverlay onClick={() => setSelectedFactID(-1)}>
                 <ModalContent onClick={(e) => e.stopPropagation()}>
-                    <CloseButton onClick={() => setSelectedFact(null)}>X</CloseButton>
-                    <ModalTitle>{selectedFact.fact}</ModalTitle>
-                    <ModalText>{selectedFact.description || "Nenhuma descrição disponível"}</ModalText>
+                    <CloseButton onClick={() => setSelectedFactID(-1)}>X</CloseButton>
+                    <ModalTitle>{character.facts[selectedFactID].fact}</ModalTitle>
+                    <ModalText>{character.facts[selectedFactID].description || "Nenhuma descrição disponível"}</ModalText>
                     <ModalButtons>
-                        <PirateButton>+</PirateButton>
-                        <AttributeValue>{selectedFact.charge}</AttributeValue>
-                        <PirateButton>-</PirateButton>
+                        <PirateButton onClick={() => dispatch({type:'decrementFactPower', factIndex:selectedFactID})}>-</PirateButton>
+                        <AttributeValue>{character.facts[selectedFactID].charge}</AttributeValue>
+                        <PirateButton onClick={() => dispatch({type:'incrementFactPower', factIndex:selectedFactID})}>+</PirateButton>
                     </ModalButtons>
-                    
                 </ModalContent>
             </ModalOverlay>
+            
         )}
-
     </MainContainer>
   )
 }
