@@ -5,5 +5,8 @@
             "args": ["--login", "-i", "-c", "cd /C/Users/User/Desktop/Documentos/Git/grimorio-dev/CS50 && exec bash"]
         }
     },
-    "terminal.integrated.defaultProfile.windows": "MSYS2"
+    "terminal.integrated.defaultProfile.windows": "MSYS2",
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
