@@ -6,6 +6,8 @@ import Piratas from "./pages/Piratas";
 import Marinheiros from "./pages/Marinheiros";
 import Espectros from "./pages/Espectros";
 
+// import '../src/reset.css'
+
 function App() {
 
   return (

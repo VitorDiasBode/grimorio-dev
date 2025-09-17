@@ -1,0 +1,11 @@
+.navbar{
+    background-color: antiquewhite;
+}
+
+.logo {
+    width: 48px;
+}
+
+.active {
+    color: brown;
+}
