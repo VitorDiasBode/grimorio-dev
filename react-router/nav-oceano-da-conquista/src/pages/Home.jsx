@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import Navbar from "../components/Navbar/Navbar";
 import CartaoDoPersonagem from "../components/CartaoDoPersonagem/CartaoDoPersonagem";
 
+
 function Home() {
     return (
         <div>

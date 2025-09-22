@@ -1,11 +1,70 @@
-.navbar{
-    background-color: antiquewhite;
+/* style.css */
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid rgba(0, 100, 150, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 50, 80, 0.1);
 }
 
-.logo {
-    width: 48px;
+/* Logo */
+.logo img {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 0 2px rgba(0, 73, 87, 0.6));
+  margin-right: 2rem;
 }
 
-.active {
-    color: brown;
+/* Links */
+.links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0d3b66; /* azul marinho suave */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* efeito de sublinhado suave como onda */
+.links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #00b4d8; /* azul água */
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.links a:hover {
+  color: #0077b6;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* link ativo */
+.links .active {
+  color: #06789f;
+  font-weight: 700;
+}
+
+.links .active::after {
+  width: 100%;
+  background-color: #06789f;
 }
