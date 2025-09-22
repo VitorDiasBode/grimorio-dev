@@ -3,6 +3,7 @@ import { personagens } from "../data";
 import { Link } from "react-router";
 import Navbar from "../components/Navbar/Navbar";
 import CartaoDoPersonagem from "../components/CartaoDoPersonagem/CartaoDoPersonagem";
+import './page.css'
 
 
 function Home() {

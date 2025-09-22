@@ -10,15 +10,17 @@ function Piratas() {
         <div>
             <Navbar />
 
-            <h1>Piratas</h1>
+            <main>
+                <h1>Piratas</h1>
 
-            <ul>
-                {piratas.map( (pirata) => (
-                    <li key={pirata.id}>
-                        <CartaoDoPersonagem nome={pirata.nome} categoria={pirata.categoria}/>
-                    </li>    
-                ))}
-            </ul>
+                <ul>
+                    {piratas.map( (pirata) => (
+                        <li key={pirata.id}>
+                            <CartaoDoPersonagem nome={pirata.nome} categoria={pirata.categoria}/>
+                        </li>    
+                    ))}
+                </ul>
+            </main>
         </div>
     )
 }

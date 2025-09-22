@@ -10,15 +10,17 @@ function Espectros() {
         <div>
             <Navbar />
 
-            <h1>Espectros</h1>
+            <main>
+                <h1>Espectros</h1>
 
-            <ul>
-                {espectros.map( (espectro) => (
-                    <li key={espectro.id}>
-                        <CartaoDoPersonagem nome={espectro.nome} categoria={espectro.categoria}/>
-                    </li>    
-                ))}
-            </ul>
+                <ul>
+                    {espectros.map( (espectro) => (
+                        <li key={espectro.id}>
+                            <CartaoDoPersonagem nome={espectro.nome} categoria={espectro.categoria}/>
+                        </li>    
+                    ))}
+                </ul>
+            </main>
         </div>
     )
 }
