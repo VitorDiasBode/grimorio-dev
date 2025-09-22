@@ -15,7 +15,7 @@ function Home() {
                 <ul>
                     {personagens.map( (personagem) => (
                         <li key={personagem.id}>
-                            <CartaoDoPersonagem nome={personagem.nome} categoria={personagem.categoria} id={personagem.id}></CartaoDoPersonagem>
+                            <CartaoDoPersonagem nome={personagem.nome} categoria={personagem.categoria} id={personagem.id} imagem={personagem.imagem}></CartaoDoPersonagem>
                         </li>
                     ))}
                 </ul>
