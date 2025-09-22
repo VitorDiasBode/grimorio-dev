@@ -14,7 +14,7 @@ export default function Marinheiros() {
 
             <ul>
                 {marinheiros.map( (marinheiro) => (
-                    <li key={marinheiro.key}>
+                    <li key={marinheiro.id}>
                         <CartaoDoPersonagem nome={marinheiro.nome} categoria={marinheiro.categoria}/>
                     </li>    
                 ))}
