@@ -16,7 +16,7 @@ function Piratas() {
                 <ul>
                     {piratas.map( (pirata) => (
                         <li key={pirata.id}>
-                            <CartaoDoPersonagem nome={pirata.nome} categoria={pirata.categoria} imagem={pirata.imagem}/>
+                            <CartaoDoPersonagem nome={pirata.nome} categoria={pirata.categoria} imagem={pirata.imagem} id={pirata.id}/>
                         </li>    
                     ))}
                 </ul>

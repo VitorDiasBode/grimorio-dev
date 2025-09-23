@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Piratas from "./pages/Piratas";
 import Marinheiros from "./pages/Marinheiros";
 import Espectros from "./pages/Espectros";
-import Personagem from "./pages/Personagem";
+import Personagem from "./pages/Personagem/Personagem";
 
 // import '../src/reset.css'
 

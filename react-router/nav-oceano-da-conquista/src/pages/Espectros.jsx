@@ -16,7 +16,7 @@ function Espectros() {
                 <ul>
                     {espectros.map( (espectro) => (
                         <li key={espectro.id}>
-                            <CartaoDoPersonagem nome={espectro.nome} categoria={espectro.categoria} imagem={espectro.imagem}/>
+                            <CartaoDoPersonagem nome={espectro.nome} categoria={espectro.categoria} imagem={espectro.imagem} id={espectro.id}/>
                         </li>    
                     ))}
                 </ul>
