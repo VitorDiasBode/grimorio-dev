@@ -1,0 +1,65 @@
+.cartao-personagem {
+  /* background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 50, 80, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 50, 80, 0.08); */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Efeito de "flutuar" no hover */
+.cartao-personagem:hover {
+  transform: translateY(-6px);
+}
+
+/* Imagem do personagem */
+.cartao-personagem .imagem-wrapper {
+  width: 60%;
+  aspect-ratio: 7/10;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.cartao-personagem img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Nome */
+.cartao-personagem .nome {
+  font-size: 1.25rem;
+  color: #0d1b2a;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Categoria */
+.cartao-personagem .categoria {
+  font-size: 0.95rem;
+  color: #0077b6;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Link */
+.cartao-personagem .saiba-mais {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: #0096c7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.cartao-personagem .saiba-mais:hover {
+  background: #023e8a;
+}
