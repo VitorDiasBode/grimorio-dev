@@ -1,0 +1,44 @@
+/* Main container */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Título */
+main h1 {
+  font-size: 2rem;
+  color: #0d1b2a; /* azul profundo */
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(0, 150, 200, 0.2);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Lista de personagens */
+main ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada item da lista */
+main ul li {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 50, 80, 0.15);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 50, 80, 0.05);
+}
+
+/* Efeito ao passar o mouse */
+main ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 50, 80, 0.15);
+  border-color: rgba(0, 150, 200, 0.3);
+}
