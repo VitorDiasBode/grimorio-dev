@@ -7,7 +7,7 @@ int main(void)
     
     char s[50];
     printf("String: ");
-    scanf("%s", &s);
+    scanf("%s", s);
 
     for (int i = 0; i < 6; i++)
     {
@@ -19,6 +19,7 @@ int main(void)
     }
 
     printf("Not found\n");
+    return 1;
 
 }
 
