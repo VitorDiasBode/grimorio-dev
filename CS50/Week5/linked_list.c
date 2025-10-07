@@ -29,13 +29,21 @@ int main(void)
 
     //Time Passes
 
-    node *ptr = list;
-    while (ptr != NULL)
+    // node *ptr = list;
+    // while (ptr != NULL)
+    // {
+    //     printf("VALOR :%i\n", ptr->number);
+    //     node *last_n = ptr;
+    //     ptr = ptr->next;
+    //     free(last_n);
+    // }
+
+    for (node *ptr = list; ptr != NULL; )
     {
         printf("VALOR :%i\n", ptr->number);
-        node *last_n = ptr;
-        ptr = ptr->next;
-        free(last_n);
+        node *tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
     }
     
     return 0;
