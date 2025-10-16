@@ -1,0 +1,2 @@
+## Week 6 - Python
+O foco principal dessa aula é apresentar a implementação do código em **Python**. Criar variáveis, estruturas de decisão, funções com e sem parâmetros, estruturas de dados e bibliotecas. Para isso, o David usa os programas que foram feitos em **C** nas semanas anteriores como base. Durante esse processo ele comenta como o **Python** faz por baixo dos panos aquilo que seria feito pelo desenvolvedor em **C**.
