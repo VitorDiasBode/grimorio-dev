@@ -1,0 +1,16 @@
+## Week 7 - SQL
+Nessa aula o David inicia com um exemplo simples para relacionar com o conceito de banco de dados. Usando uma planilha ele demonstra uma tabela com linhas, colunas e diversos dados representando respostas de uma pesquisa. Essa tabela tem três colunas, uma para o horário em que a resposta foi feita, uma para a linguagem favorita da pessoa e a última para o problema favorito que foi desenvolvido com aquela linguagem. A função de mostrar essa planilha é para relacionar com uma tabela de banco de dados, onde cada linha representa um registro e cada coluna uma propriedade.
+
+Uma pesquisa dessa com muitas respostas seria trabalhosa para ser avaliada por uma pessoa sozinha. Para lidar com isso, um programa para analisar todos aqueles dados se torna necessário. Aquela tabela de dados vai ser salva como um arquivo CSV (Comma-Separated Values). De forma simplificada, cada linha da tabela vai ser salva em um documento de texto e cada valor vai ser separado por uma vírgula.
+
+O programa vai usar a biblioteca `csv` para ler as linhas de dados do arquivo. O laço de repetição vai ler os dados e vai resultar em uma contagem para cada linguagem que tenha sido uma resposta.
+
+Como de costume, o problema é resolvido de formas diferentes, tornando mais fácil o entendimento do programa e reforçando que não existe uma única forma de solucionar um problema.
+
+O David comenta sobre como esse código, com quinze linhas, pode ser reduzido a um único comando. Para isso o SQL é necessário. Essa é uma linguagem usada para lidar com bancos de dados relacionais, onde os dados são armazenados em tabelas e podem se relacionar entre si. O conceito de CRUD é apresentado e nos exemplos seguintes, Davida apresenta as propriedades do SQL que são usadas para realizar essas operações.
+
+É importante saber quais as propriedades, seus tipos e com quais outras tabelas cada uma se relaciona. Essa definição lógica do banco de dados é chamado de **schema**. Nele uma **chave primária**, que é uma propriedade cujo valor não se repete, é definida. Esse atributo é usado para buscar o registro na tabela e como **chave estrangeira** para definir relação com outro tabela. 
+
+Em banco de dados com uma tabela para moradores e residências de um condomínio, cada morador e cada residência teria um valor numérico único que é a **chave primária**. Caso seja necessário acessar os dados de uma residência, a sua **chave primária** é usada. Para armazenar que cada morador possui uma residência, uma propriedade `residencia_id` é declarada no schema da tabela de moradores. Essa propriedade tem como valor a **chave primária** de uma residência e tornando-a uma **chave estrangeira**.  
+
+Como nos algoritmos, cada requisição feita ao banco de dados é executada em um tempo. A relação entre tempo de execução e espaço de armazenamento também pode ser ajustado. O Index pode ser declarado para que as requisições envolvendo tabelas específicas possam ser mais rápidas, guardar esse "atalho" depende de mais memória.
