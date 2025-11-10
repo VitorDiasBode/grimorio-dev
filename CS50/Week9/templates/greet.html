@@ -1,6 +1,12 @@
 {% extends "layout.html" %}
 
 {% block body %}
-        Hello, {{name}}.
+    Hello, 
+    {% if name %}
+        {{name}}.
+    {% else %}
+        world.
+    {% endif %}
+    
 {%endblock %}
 
