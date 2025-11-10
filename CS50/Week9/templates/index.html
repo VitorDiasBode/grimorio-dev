@@ -1,11 +1,8 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <title>Hello, title</title>
-    </head>
-
-    <body>
-        Hello, {{ placeholder }}.
-    </body>
-</html>
+{% block body %}
+    <form action="/greet" method="get">
+        <input type="text" name="name" placeholder="Name" autofocus autocomplete="off">
+        <button type="submit">Greet</button>
+    </form>
+{% endblock %}
