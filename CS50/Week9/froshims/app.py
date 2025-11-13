@@ -7,6 +7,7 @@ SPORTS = [
     "Soccer",
     "Ultimate Frisbee"
 ]
+REGISTRANTS = {}
 
 @app.route("/")
 def index():
@@ -24,4 +25,10 @@ def register():
     if sport not in SPORTS:
         return render_template("error.html", message="Invalid sport")
     
+    REGISTRANTS[name] = sport
+
     return render_template("success.html")
+
+@app.route("/registrants")
+def registrants():
+    return render_template("registrants.html", registrants=REGISTRANTS)
