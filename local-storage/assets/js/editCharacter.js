@@ -15,10 +15,12 @@ function editCharacter(){
     form.elements["class"].value = character["class"];
     form.elements["level"].value = character["level"];
     form.elements["score"].value = character["score"];
-    form.elements["action"].innerText = "Edit";
-    const deleteButton = document.createElement("button");
-    deleteButton.innerHTML = "Delete";
-    form.appendChild(deleteButton);
 
-    
+    console.log(form.elements["delete"]);
+    form.elements["edit"].disabled = false;
+    form.elements["edit"].hidden = false;
+    form.elements["delete"].disabled = false;
+    form.elements["delete"].hidden = false;
+
+
 }

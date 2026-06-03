@@ -7,6 +7,9 @@ function createCharacter(){
     console.log("erro")
 
     const form = document.getElementById("character-form");
+
+    form.elements["create"].disabled = false;
+    form.elements["create"].hidden = false;
     
     form.addEventListener("submit", (event) => {
         event.preventDefault();
