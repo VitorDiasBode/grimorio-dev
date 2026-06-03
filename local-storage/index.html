@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Storage Grades</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head> 
+
+    <body>
+        <h1 class="m-5">Grades</h1>
+        <table class="table">
+            <thead> 
+                <tr>
+                    <th>Name</th>
+                    <th>Level</th>
+                    <th>Class</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+
+            <tbody class="table-characters">
+
+            </tbody>
+        </table>
+        
+        <button class="btn-primary">
+            <a class="text-decoration-none text-reset" href="pages/create-character.html">Set a new Character</a>
+        </button>
+
+        <script type="module" src="assets/js/main.js"></script>
+        <script type="module" src="assets/js/renderCharacterTable.js"></script>
+        <script type="module" src="assets/js/selectCharacter.js"></script>
+    </body>
+</html>
