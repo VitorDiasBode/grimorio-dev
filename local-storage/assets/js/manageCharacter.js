@@ -5,7 +5,9 @@ function manageCharacter(){
     
     if (isNaN(characterId)) return;
 
-    let character = JSON.parse(localStorage.getItem("characters"))[characterId];
+    let characters = JSON.parse(localStorage.getItem("characters"))
+    let character = characters[characterId];
+    console.log(characters);
 
     document.getElementById("title").innerText = "Edit Character";
     
@@ -21,13 +23,16 @@ function manageCharacter(){
     form.elements["delete"].disabled = false;
     form.elements["delete"].hidden = false;
 
-    form.elements["edit"].addEventListener("click", editCharacter);
-    form.elements["delete"].addEventListener("click", deleteCharacter);
-}
+    form.elements["edit"].addEventListener("click", (event) => {
+        event.preventDefault();
 
-function editCharacter(event){
-    event.preventDefault();
-    
+        const newCharacter = Object.fromEntries(new FormData(form));
+        characters[characterId] = newCharacter;
+        localStorage.setItem("characters", JSON.stringify(characters));
+        window.location.href = "../index.html";
+    });
+
+    form.elements["delete"].addEventListener("click", deleteCharacter);
 }
 
 function deleteCharacter(event){
