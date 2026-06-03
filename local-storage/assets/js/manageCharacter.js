@@ -32,9 +32,12 @@ function manageCharacter(){
         window.location.href = "../index.html";
     });
 
-    form.elements["delete"].addEventListener("click", deleteCharacter);
-}
+    form.elements["delete"].addEventListener("click", (event) =>{
+        event.preventDefault();
 
-function deleteCharacter(event){
-    event.preventDefault();
+        characters.splice(characterId, 1);
+        console.log(characters);
+        localStorage.setItem("characters", JSON.stringify(characters));
+        window.location.href = "../index.html";
+    });
 }
