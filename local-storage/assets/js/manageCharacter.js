@@ -1,7 +1,6 @@
+manageCharacter();
 
-editCharacter();
-
-function editCharacter(){
+function manageCharacter(){
     const characterId = parseInt(new URLSearchParams(window.location.search).get("id"));
     
     if (isNaN(characterId)) return;
@@ -22,5 +21,15 @@ function editCharacter(){
     form.elements["delete"].disabled = false;
     form.elements["delete"].hidden = false;
 
+    form.elements["edit"].addEventListener("click", editCharacter);
+    form.elements["delete"].addEventListener("click", deleteCharacter);
+}
 
+function editCharacter(event){
+    event.preventDefault();
+    
+}
+
+function deleteCharacter(event){
+    event.preventDefault();
 }

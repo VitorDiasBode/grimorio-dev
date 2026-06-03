@@ -4,7 +4,6 @@ function createCharacter(){
     const characterId = parseInt(new URLSearchParams(window.location.search).get("id"));
     
     if (!isNaN(characterId)) return;
-    console.log("erro")
 
     const form = document.getElementById("character-form");
 
